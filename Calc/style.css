@@ -1,0 +1,250 @@
+*{
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+  /* background-color: blue; */
+
+  
+}
+body{
+  background-color: #383838;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 100vh;
+}
+.historico{
+  height: 400px;
+  width: 530px;
+
+  border: 1px solid black;
+
+  background-color: #404040;
+
+  margin: 0 auto;
+
+
+}
+.container__display{
+
+  width: 530px;
+  height: 66px;
+  border: 1px solid black;
+  border-bottom: none;
+
+  margin: 0 auto;
+
+}
+#display{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color:#404040;
+
+  padding: 10px;
+  align-items: center;
+
+  font-size: 18px;
+
+  border: none;
+color: white;
+
+}
+.container__botoes{
+
+  border:none;
+
+
+  height: 236px;
+  width: 530px;
+
+  margin: 0 auto;
+
+  margin-top: 10px;
+
+  gap: 5px;
+
+  
+}
+
+button{ color: white;
+  background-color:#404040;
+
+  border: none;
+  
+  height: 100%;
+  width: 100%;
+
+}
+button:hover{
+  cursor: pointer;
+
+  background-color:#565555;
+
+}
+.botao{
+  height: 43px;
+  width: 100px;
+}
+.grandao button{
+  height: 90px;
+
+  background-color: #6DB442;
+
+}
+.grandao button:hover{
+  background-color: #83b764;
+
+}
+.backspace button:hover{
+  background-color: #ef656a;
+  
+}
+.backspace button{
+  background-color: #F04A50;
+}
+.botao:nth-child(1){
+  grid-area: A;
+
+}
+.botao:nth-child(2){
+  grid-area: B;
+
+
+}
+.botao:nth-child(3){
+  grid-area: C;
+
+
+}
+.botao:nth-child(4){
+  grid-area: D;
+
+
+}
+.botao:nth-child(5){
+  grid-area: E;
+
+
+}
+.botao:nth-child(6){
+  grid-area: F;
+
+
+}
+.botao:nth-child(7){
+  grid-area: G;
+
+
+}
+.botao:nth-child(8){
+  grid-area: H;
+
+
+}
+.botao:nth-child(9){
+  grid-area: I;
+
+
+}
+.botao:nth-child(10){
+  grid-area: J;
+
+
+}
+.botao:nth-child(11){
+  grid-area: K;
+
+
+}
+.botao:nth-child(12){
+  grid-area: L;
+
+
+}
+.botao:nth-child(13){
+  grid-area: M;
+
+
+}
+.botao:nth-child(14){
+  grid-area: N;
+
+
+}
+.botao:nth-child(15){
+  grid-area: O;
+
+
+}
+.botao:nth-child(16){
+  grid-area: P;
+
+
+}
+.botao:nth-child(17){
+  grid-area: Q;
+
+
+}
+.botao:nth-child(18){
+  grid-area: R;
+
+
+}
+.botao:nth-child(19){
+  grid-area: S;
+
+
+}
+.botao:nth-child(20){
+  grid-area: T;
+  grid-row: span 2;
+
+
+}
+.botao:nth-child(21){
+  grid-area: U;
+
+
+}
+.botao:nth-child(22){
+  grid-area: V;
+
+
+}
+.botao:nth-child(23){
+  grid-area: W;
+
+
+}
+.botao:nth-child(24){
+  grid-area: xis;
+
+
+}
+.botao:nth-child() button {
+
+
+}
+.container__botoes{
+  display: grid;
+  
+  grid-template-columns: repeat(5, 1fr); 
+  grid-template-rows: repeat(5, auto); 
+
+
+
+  grid-template-areas:
+    "A B C D E"
+    "F G H I J"
+    "K L M N O"
+    "P Q R S X"
+    "U V W xis T"; 
+
+
+  gap: 5px;
+}

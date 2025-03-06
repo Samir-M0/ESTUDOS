@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+
+  <script src="js.js" defer></script>
+  <title>Calculadora</title>
+</head>
+<body>
+
+  <main>
+    <div class="historico">
+
+    </div>
+    <div class="container__display">
+      <input type="text" id="display">
+    </div>
+    <div class="container__botoes">
+        
+        <div class="botao backspace">
+          <button id="delValue" onclick="apagar()">
+            <img src="image/delete.svg" alt="">
+          </button>
+        </div>
+      <div class="botao" >
+        <button >&#40;</button></div>
+      <div class="botao" >
+        <button>&#41;</button></div>
+      <div class="botao" >
+        <button>mod</button></div>
+      <div class="botao" >
+        <button>n</button></div>
+      <div class="botao" >
+        <button  onclick="clicar(this)">7</button></div>
+      <div class="botao" >
+        <button id="addValue" onclick="clicar(this)">8</button></div>
+      <div class="botao" >
+        <button  onclick="clicar(this)">9</button></div>
+      <div class="botao" >
+        <button  onclick="clicar(this)">/</button></div>
+      <div class="botao" >
+        <button  onclick="clicar(this)">&#8730;</button></div>
+      <div class="botao" >
+        <button  onclick="clicar(this)">4</button></div>
+      <div class="botao" >
+        <button  onclick="clicar(this)">5</button></div>
+      <div class="botao" >
+        <button  onclick="clicar(this)">6</button></div>
+      <div class="botao" >
+        <button  onclick="clicar(this)">x</button></div>
+      <div class="botao" >
+        <button  onclick="clicar(this)">x²</button></div>
+      <div class="botao" >
+        <button  onclick="clicar(this)">1</button></div>
+      <div class="botao" >
+        <button  onclick="clicar(this)">2</button></div>
+      <div class="botao" >
+        <button  onclick="clicar(this)">3</button></div>
+      <div class="botao" >
+        <button  onclick="clicar(this)">-</button></div>
+      <div class="botao grandao" >
+        <button onclick="calculo()">=</button>
+      </div>
+      <div class="botao">
+        <button  onclick="clicar(this)">0</button>
+      </div>
+      <div class="botao">
+        <button  onclick="clicar(this)">,</button>
+      </div>
+      <div class="botao">
+        <button  onclick="clicar(this)">%</button>
+      </div>
+      <div class="botao">
+        <button  onclick="clicar(this)">+</button>
+      </div>
+ 
+    </div>
+  </main>
+  
+</body>
+</html>

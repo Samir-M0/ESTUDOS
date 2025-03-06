@@ -1,0 +1,14 @@
+#area{
+  background-color: green;
+  color: white;
+
+  font: normal 15pt arial;
+
+  width: 200px;
+  height: 200px;
+
+  line-height: 200px;
+  text-align: center;
+
+  cursor: pointer;
+}
