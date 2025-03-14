@@ -31,7 +31,9 @@ function contagem() {
   contagemRegressiva.innerHTML = `${horas}:${minutos}:${segundos}`;
 
   tempo--;
-
+  if(tempo == 0){
+    alert("Tempo esgotado!")
+  }
 }
 function PararRetornar() {
 
