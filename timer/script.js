@@ -40,7 +40,6 @@ function PararRetornar() {
   if (document.getElementById("retomar").innerHTML == "Parar") {
     document.getElementById("retomar").innerHTML = "Retomar"
     document.getElementById("retomar").style.backgroundColor = "blue"
-    console.log("oi")
 
     clearInterval(intervalo)
     intervalo = null
@@ -50,7 +49,6 @@ function PararRetornar() {
 
     document.getElementById("retomar").innerHTML = "Parar"
     document.getElementById("retomar").style.backgroundColor = "red"
-    console.log("oi")
 
     intervalo = setInterval(contagem, 1000)
 
