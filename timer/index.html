@@ -20,7 +20,9 @@
 
   <div id="timer-cotainer">
     <div id="timer">
-      <!-- 00:00:00 -->
+      <span id="horas">00</span>
+      <span>:</span>
+      <span id="minutos">00</span>
     </div>
     <div id="horario">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bell-fill" viewBox="0 0 16 16">
@@ -30,8 +32,8 @@
     </div>
   </div>
   <div id="opcoes">
-    <button id="cancelar" >Cancelar</button>
-    <button id="retomar" onclick="cancelamentoRetornar()">Parar</button>
+    <button id="cancelar" onclick="cancelar()" >Cancelar</button>
+    <button id="retomar" onclick="PararRetornar()">Parar</button>
   </div>
   
 </body>

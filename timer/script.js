@@ -2,6 +2,7 @@ function horarioAtual() {
   var date = new Date();
   var horaAtual = date.getHours() + ":" + date.getMinutes();
   document.getElementById("hora_atual").innerHTML = horaAtual;
+
 }
 
 setInterval(horarioAtual, 1000)
@@ -32,7 +33,7 @@ function contagem() {
   tempo--;
 
 }
-function cancelamentoRetornar() {
+function PararRetornar() {
 
   if (document.getElementById("retomar").innerHTML == "Parar") {
     document.getElementById("retomar").innerHTML = "Retomar"
@@ -52,7 +53,14 @@ function cancelamentoRetornar() {
     intervalo = setInterval(contagem, 1000)
 
   }
+}
 
+function cancelar() {
+  clearInterval(intervalo)
+  intervalo = null
+  document.getElementById("retomar").innerHTML = "Retomar"
+  document.getElementById("retomar").style.backgroundColor = "blue"
 
-
+  tempo = casoCancele
+  
 }
