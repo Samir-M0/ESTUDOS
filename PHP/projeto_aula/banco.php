@@ -1,14 +1,13 @@
 <?php
 
-require_once './src/Conta.php';
-require_once './src/endereco.php';
-require_once './src/CPF.php';
-require_once './src/pessoa.php';
-require_once './src/Cliente.php';
-require_once './src/funcionario.php';
+require_once 'autoload.php';
 
+use App\Modelo\Conta\Cliente;
+use App\Modelo\CPF;
+use App\Modelo\Endereco;
+use App\Modelo\Funcionario;
 
-$endereco = new Endereco(cidade:'Petrópolis', bairro:"Um bairro", rua:'Minha rua', numero:'71B');
+$endereco = new Endereco(cidade: 'Petrópolis', bairro: "Um bairro", rua: 'Minha rua', numero: '71B');
 $samir = new Cliente(new CPF('123.123.123-92'), 'Samir Mendes', $endereco);
 
 $umfuncionario = new Funcionario('Vinicius', new CPF('123.456.789-01'), 'Dev');

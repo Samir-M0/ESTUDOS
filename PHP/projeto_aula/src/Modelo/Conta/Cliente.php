@@ -1,5 +1,11 @@
 <?php
 
+namespace App\Modelo\Conta;
+
+use App\Modelo\CPF;
+use App\Modelo\Endereco;
+use App\Modelo\Pessoa;
+
 class Cliente extends Pessoa
 {
 
@@ -13,7 +19,8 @@ class Cliente extends Pessoa
 
 
 
-  public function recuperarEndereco():Endereco{
+  public function recuperarEndereco(): Endereco
+  {
     return $this->endereco;
 
   }

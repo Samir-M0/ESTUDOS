@@ -1,13 +1,15 @@
 <?php
 
+namespace App\Modelo\Conta;
+
 class Conta
 {
   //Definir dados da conta
-  private Cliente $titular;
+  private  $titular;
   private float $saldo;
   private static $numeroDaConta = 0;
 
-  public function __construct(CPF $cpf, Cliente $titular)
+  public function __construct(Cliente $titular)
   {
     echo "Criando nova conta" . PHP_EOL;
     $this->titular = $titular;
@@ -20,22 +22,19 @@ class Conta
     self::$numeroDaConta--;
   }
 
-  public function recuperarCpf(): string
-  {
-    return $this->cpf->recuperarNumero();
-  }
-
   public function sacar(float $valorASacar)
   {
+    $tarifa = $valorASacar * 0.005;
+    $valorASacar = $valorASacar + $tarifa;
     if ($valorASacar > $this->saldo) {
       echo "Valor indisponível";
 
       return;
     }
-    $this->saldo -= $valorASacar;
+    $this->saldo -= $valorASacar + $tarifa;
   }
 
-  private function depositar(float $valorADepositar): void
+  public function depositar(float $valorADepositar): void
   {
     if ($valorADepositar < 0) {
       echo "Valor precisa ser positivo";
@@ -66,15 +65,6 @@ class Conta
     return self::$numeroDaConta;
   }
 
-  public function recuperaNomeTitular(): string
-  {
-    return $this->titular->recuperarNome();
-  }
-
-  public function recuperaCpfTitular(): string
-  {
-    return $this->cpf->recuperarCpf();
-  }
 }
 
 // $contaUm = new Conta();
