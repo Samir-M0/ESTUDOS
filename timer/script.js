@@ -11,7 +11,7 @@ setInterval(horarioAtual, 1000)
 const contagemRegressiva = document.getElementById("timer");
 //----------------------------------------------------------------------------------------------------------------------------
 //                                                    SETAR O TEMPO
-const tempoInicial = 120;
+const tempoInicial = 250;
 
 //----------------------------------------------------------------------------------------------------------------------------
 let tempo = tempoInicial * 60;
