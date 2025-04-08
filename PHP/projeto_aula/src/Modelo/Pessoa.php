@@ -3,6 +3,7 @@
 namespace App\Modelo;
 
 class Pessoa {
+  use AcessoPropriedade;
 
   protected $nome;
   private $cpf;
@@ -23,7 +24,7 @@ class Pessoa {
 
     
   }
-  protected function validaNomeTitular(string $nomeTitular)
+  final protected function validaNomeTitular(string $nomeTitular)
   {
     if (strlen($nomeTitular) < 5) {
       echo "Nome precisa de pelo menos 5 letras";

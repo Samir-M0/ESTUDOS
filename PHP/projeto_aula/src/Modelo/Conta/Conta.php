@@ -2,11 +2,16 @@
 
 namespace App\Modelo\Conta;
 
-class Conta
+use App\Modelo\Conta\SaldoInsuficiente;
+use InvalidArgumentException;
+
+// require_once "../../../autoload.php";
+
+abstract class Conta
 {
   //Definir dados da conta
-  private  $titular;
-  private float $saldo;
+  private Cliente $titular;
+  protected float $saldo;
   private static $numeroDaConta = 0;
 
   public function __construct(Cliente $titular)
@@ -24,12 +29,13 @@ class Conta
 
   public function sacar(float $valorASacar)
   {
-    $tarifa = $valorASacar * 0.005;
+
+    $tarifa = $valorASacar * $this->percentualTarifa();
     $valorASacar = $valorASacar + $tarifa;
     if ($valorASacar > $this->saldo) {
       echo "Valor indisponível";
-
-      return;
+      throw new SaldoInsuficiente($valorASacar, $this->saldo);
+      
     }
     $this->saldo -= $valorASacar + $tarifa;
   }
@@ -37,9 +43,8 @@ class Conta
   public function depositar(float $valorADepositar): void
   {
     if ($valorADepositar < 0) {
-      echo "Valor precisa ser positivo";
-
-      return;
+      throw new InvalidArgumentException();
+      
     }
     $this->saldo += $valorADepositar;
   }
@@ -65,6 +70,7 @@ class Conta
     return self::$numeroDaConta;
   }
 
+  abstract protected function percentualTarifa():float;
 }
 
 // $contaUm = new Conta();
@@ -79,4 +85,3 @@ class Conta
 // php > $primeiraConta = new Conta();
 // php > $primeiraConta -> saldo = 400;
 // php > var_dump($primeiraConta);
-

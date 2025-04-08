@@ -2,7 +2,7 @@
 
 namespace App\Modelo;
 
-class CPF{
+final class CPF{
   
   private $numero;
 

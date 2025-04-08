@@ -1,9 +1,12 @@
 <?php
 
 namespace App\Modelo;
+// require_once 'AceesoPropriedade.php';
 
-class Endereco
+
+final class Endereco
 {
+  use AcessoPropriedade;
 
   private string $cidade;
   private string $bairro;
@@ -18,22 +21,10 @@ class Endereco
     $this->numero = $numero;
   }
 
-  public function recuperaCidade(): string
-  {
-    return $this->cidade;
-  }
-  public function recuperaBairro(): string
-  {
-    return $this->cidade;
-  }
-  public function recuperaRua(): string
-  {
-    return $this->cidade;
-  }
-  public function recuperaNumero(): string
-  {
-    return $this->cidade;
-  }
 
+  public function __tostring():string
+  {
+    return "{$this->rua}, {$this->numero}, {$this->bairro}, {$this->cidade}" ;
+  }
 
 }
