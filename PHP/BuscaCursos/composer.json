@@ -1,0 +1,43 @@
+{
+    "name": "samir-m0/buscador-cursos",
+    "description": "projeto que busca os cursos do site da Alura",
+    "type": "library",
+    "authors": [
+        {
+            "name": "samir",
+            "email": "samirmendes122@gmail.com"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^7.9",
+        "symfony/dom-crawler": "^7.2",
+        "symfony/css-selector": "^7.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/",
+            "Test\\": "src/"
+        }
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "*",
+        "phan/phan": "^5.4",
+        "phpunit/phpunit": "^12.1"
+    },
+    "scripts": {
+        "test":"phpunit src\\Model\\Buscador.php",
+        "cs": "phpcs --standard=PSR12 src/",
+        "phan": "phpan --allow-polyfill-parser",
+        "check":[
+            "@test",
+            "@cs",
+            "@phan"
+        ],
+        "post-update-cmd": [
+            "@cs"
+        ]
+    },
+    "scripts-descriptions": {
+        "check":"Roda verificações"
+    }
+}
