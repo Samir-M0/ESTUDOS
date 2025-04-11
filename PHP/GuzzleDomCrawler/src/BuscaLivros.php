@@ -7,7 +7,6 @@ use Symfony\Component\DomCrawler\Crawler;
 
 class BuscaLivros
 {
-  private $crawler;
   private $httpcliente;
   private $url;
 
@@ -17,36 +16,30 @@ class BuscaLivros
     $this->url = $url;
   }
 
-  public function buscarNomes(): array
-  {
-    $response = $this->httpcliente->request('get', $this->url);
-    $html = $response->getBody();
-    $crawler = new Crawler();
-    $crawler->addContent($html);
-    $elementos = $crawler->filter('h2.product-item__title.product-item__title--mt.product-item__name');
 
-    $nomes = [];
-
-    foreach ($elementos as $nome) {
-      $nomes[] = $nome->textContent;
-    }
-
-    return $nomes;
-  }
-
-  public function buscarPrecos(): array
+  public function buscarLivros()
   {
     $response = $this->httpcliente->request('get', $this->url);
     $html = $response->getBody();
     $crawler = new Crawler();
     $crawler->addHtmlContent($html);
-    $elementos = $crawler->filter('span.product-item__text--darken');
-    $precos = [];
+    $precos = $crawler->filter('span.product-item__text--darken');
+    $titulos = $crawler->filter('h2.product-item__title.product-item__title--mt.product-item__name');
+    $precosArrayFinal = [];
+    $precosNomeFinal = [];
 
-    foreach ($elementos as $precoReal) {
-      $precos[] = $precoReal->textContent;
+    foreach ($precos as $precoReal) {
+      $precosArrayFinal[] = $precoReal->textContent;
+    }
+    foreach ($titulos as $titulo) {
+      $precosNomeFinal[] = $titulo->textContent;
     }
 
-    return $precos;
+    for ($i = 0; $i < count($precosNomeFinal); $i++) {
+      echo "Livro: {$precosNomeFinal[$i]}"  . "\n";
+      echo "Preço: {$precosArrayFinal[$i]}"  . "\n\n";
+    }
+
+
   }
 }
